@@ -32,6 +32,12 @@ namespace CRCBenchmarks.NET
         }
 
         [Benchmark]
+        public uint CrcVoronImproved()
+        {
+            return Voron.Util.CrcImproved.Value(_data);
+        }
+
+        [Benchmark]
         public byte[] CrcKit()
         {
             return _crcDamien.ComputeHash(_data);
